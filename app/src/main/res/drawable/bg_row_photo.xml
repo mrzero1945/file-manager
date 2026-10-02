@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- List row photo: the decoded bitmap is the ImageView's own drawable and is
+     clipped to these corners by clipToOutline. Doubles as the loading state. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="6dp" />
+            <solid android:color="#2C2C2E" />
+        </shape>
+    </item>
+</layer-list>

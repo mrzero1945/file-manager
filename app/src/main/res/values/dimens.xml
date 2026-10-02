@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="row_inset">0dp</dimen>
+    <dimen name="list_inset">16dp</dimen>
+    <dimen name="tab_bar_height">50dp</dimen>
+    <dimen name="nav_bar_height">44dp</dimen>
+</resources>

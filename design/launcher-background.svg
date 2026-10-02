@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" sodipodi:docname="launcher-background.svg" version="1.1" width="108px" height="108px" viewBox="0 0 108 108" id="svg12413" inkscape:version="1.3.2 (091e20e, 2023-11-25)">
+  <sodipodi:namedview id="nv" pagecolor="#ffffff" inkscape:pageopacity="0"
+     inkscape:document-units="px" inkscape:zoom="0.45" inkscape:cx="54.0"
+     inkscape:cy="54.0" inkscape:current-layer="layer-bg" />
+  <g inkscape:label="Background" inkscape:groupmode="layer" id="layer-bg" style="display:inline">
+    <defs>
+      <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="108"
+          gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#2AA9FF" stop-opacity="1" />
+        <stop offset="1" stop-color="#0A5FE0" stop-opacity="1" />
+      </linearGradient>
+    </defs>
+    <path d="M0,0 H108 V108 H0 Z" id="squircle" style="fill:url(#bgGrad);stroke:none" />
+  </g>
+
+</svg>

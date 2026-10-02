@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" sodipodi:docname="launcher-foreground.svg" version="1.1" width="108px" height="108px" viewBox="0 0 108 108" id="svg91189" inkscape:version="1.3.2 (091e20e, 2023-11-25)">
+  <sodipodi:namedview id="nv" pagecolor="#ffffff" inkscape:pageopacity="0"
+     inkscape:document-units="px" inkscape:zoom="0.45" inkscape:cx="54.0"
+     inkscape:cy="54.0" inkscape:current-layer="layer-bg" />
+  <g inkscape:label="Glyph" inkscape:groupmode="layer" id="layer-glyph" style="display:inline">
+    <path d="M27.22 41.89 C27.22 37.98 30.56 34.63 34.47 34.63 H45.63 C47.86 34.63 49.81 35.75 51.21 37.42 L54.56 41.61 H73.53 C77.44 41.61 80.78 44.95 80.78 48.86 V65.04 C80.78 68.95 77.44 72.30 73.53 72.30 H34.47 C30.56 72.30 27.22 68.95 27.22 65.04 Z" id="folder-glyph-shadow" transform="translate(0,1.7)"
+       style="fill:#0B3F8F;fill-opacity:0.22;stroke:none" />
+    <path d="M27.22 41.89 C27.22 37.98 30.56 34.63 34.47 34.63 H45.63 C47.86 34.63 49.81 35.75 51.21 37.42 L54.56 41.61 H73.53 C77.44 41.61 80.78 44.95 80.78 48.86 V65.04 C80.78 68.95 77.44 72.30 73.53 72.30 H34.47 C30.56 72.30 27.22 68.95 27.22 65.04 Z" id="folder-glyph"
+       style="fill:#FFFFFF;stroke:none" />
+  </g>
+
+  <g inkscape:label="Guides" inkscape:groupmode="layer" id="layer-guides" style="display:none">
+    <circle cx="54.0" cy="54.0" r="48.0" id="safe-circle"
+       style="fill:none;stroke:#ffffff;stroke-width:0.21;stroke-dasharray:1.8 1.8;opacity:0.55" />
+    <rect x="11.9" y="11.9" width="84.2"
+       height="84.2" id="safe-square"
+       style="fill:none;stroke:#ffffff;stroke-width:0.21;stroke-dasharray:1.8 1.8;opacity:0.55" />
+  </g>
+</svg>

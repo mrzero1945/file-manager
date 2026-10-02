@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">File Manager</string>
+    <string name="tab_browse">Browse</string>
+    <string name="tab_recents">Recents</string>
+    <string name="tab_storage">Storage</string>
+    <string name="tab_search">Search</string>
+
+    <string name="action_new_folder">New Folder</string>
+    <string name="action_rename">Rename</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_copy">Copy</string>
+    <string name="action_move">Move</string>
+    <string name="action_share">Share</string>
+    <string name="action_info">Get Info</string>
+    <string name="action_open">Open</string>
+    <string name="action_select_all">Select All</string>
+    <string name="action_paste">Paste Here</string>
+    <string name="action_sort">Sort</string>
+    <string name="action_view">View</string>
+    <string name="action_show_hidden">Show Hidden Files</string>
+    <string name="action_new_file">New File</string>
+    <string name="cancel">Cancel</string>
+    <string name="done">Done</string>
+    <string name="ok">OK</string>
+    <string name="rename">Rename</string>
+    <string name="delete">Delete</string>
+
+    <string name="empty_folder">This folder is empty</string>
+    <string name="no_results">No results for “%1$s”</string>
+    <string name="search_hint">Search</string>
+    <string name="n_items">%1$d items</string>
+    <string name="n_selected">%1$d selected</string>
+    <string name="free_of">%1$s available of %2$s</string>
+    <string name="permission_title">Allow access to files</string>
+    <string name="permission_body">File Manager needs permission to browse your storage. Nothing is uploaded — everything stays on this device.</string>
+    <string name="grant">Continue</string>
+    <string name="open_settings">Open Settings</string>
+
+    <string name="sort_name">Name</string>
+    <string name="sort_date">Date Modified</string>
+    <string name="sort_size">Size</string>
+    <string name="sort_type">Kind</string>
+
+    <string name="info_name">Name</string>
+    <string name="info_kind">Kind</string>
+    <string name="info_size">Size</string>
+    <string name="info_modified">Modified</string>
+    <string name="info_path">Where</string>
+    <string name="info_items">Contains</string>
+</resources>
