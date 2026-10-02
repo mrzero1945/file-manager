@@ -52,7 +52,7 @@
 
             <TextView
                 android:id="@+id/title"
-                style="@style/AF.RowTitle"
+                style="@style/FM.RowTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="middle"
@@ -61,7 +61,7 @@
 
             <TextView
                 android:id="@+id/meta"
-                style="@style/AF.RowSubtitle"
+                style="@style/FM.RowSubtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"

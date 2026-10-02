@@ -1,4 +1,4 @@
-// Native metadata engine for AppleFiles.
+// Native metadata engine for File Manager.
 //
 // Why this exists
 // ---------------

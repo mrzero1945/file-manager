@@ -1,10 +1,10 @@
-# Apple Files
+# File Manager
 
-A file manager for Android with an Apple Files–inspired interface, written in Java with a
+A file manager for Android with an iOS-style interface, written in Java with a
 native C++ metadata engine.
 
 <p align="center">
-  <img src="design/playstore-512.png" width="128" height="128" alt="Apple Files icon">
+  <img src="design/playstore-512.png" width="128" height="128" alt="File Manager icon">
 </p>
 
 ## Features
@@ -57,7 +57,7 @@ export ANDROID_HOME="$HOME/Android/Sdk"
 ```
 
 The signed APK is written to
-`app/build/outputs/apk/release/AppleFiles-release-<versionName>.apk`.
+`app/build/outputs/apk/release/FileManager-release-<versionName>.apk`.
 
 Debug builds use the `.debug` application ID suffix so they can sit next to a release
 install:
@@ -72,7 +72,7 @@ Release signing credentials are read from `keystore.properties` in the repositor
 which is git-ignored and never committed:
 
 ```properties
-storeFile=applefiles.jks
+storeFile=filemanager.jks
 storePassword=…
 keyAlias=…
 keyPassword=…

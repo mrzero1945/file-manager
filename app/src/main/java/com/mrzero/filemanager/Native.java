@@ -24,7 +24,7 @@ final class Native {
 
     private static boolean load() {
         try {
-            System.loadLibrary("applefiles");
+            System.loadLibrary("filemanager");
             return true;
         } catch (Throwable t) {
             return false;

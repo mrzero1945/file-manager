@@ -68,48 +68,48 @@ public class SearchPage extends FrameLayout implements FileAdapter.Listener {
         input.setHintTextColor(0xFF8E8E93);
         input.setTextColor(0xFFFFFFFF);
         input.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 17f);
-        input.setBackground(Apple.round(0xFF1C1C1E, Apple.dp(act, 10f)));
+        input.setBackground(Design.round(0xFF1C1C1E, Design.dp(act, 10f)));
         input.setSingleLine(true);
         input.setLetterSpacing(-0.011f);
         input.setImeOptions(android.view.inputmethod.EditorInfo.IME_ACTION_SEARCH);
-        input.setPadding(Apple.dp(act, 12f), Apple.dp(act, 9f),
-                Apple.dp(act, 12f), Apple.dp(act, 9f));
+        input.setPadding(Design.dp(act, 12f), Design.dp(act, 9f),
+                Design.dp(act, 12f), Design.dp(act, 9f));
         input.setCursorVisible(true);
 
         android.widget.ImageView magnifier = new android.widget.ImageView(act);
         magnifier.setImageResource(R.drawable.ic_tab_search);
         magnifier.setColorFilter(0xFF8E8E93, android.graphics.PorterDuff.Mode.SRC_IN);
         FrameLayout fieldWrap = new FrameLayout(act);
-        LayoutParams magLp = new LayoutParams(Apple.dp(act, 15f), Apple.dp(act, 15f),
+        LayoutParams magLp = new LayoutParams(Design.dp(act, 15f), Design.dp(act, 15f),
                 Gravity.CENTER_VERTICAL | Gravity.START);
-        magLp.leftMargin = Apple.dp(act, 10f);
+        magLp.leftMargin = Design.dp(act, 10f);
         fieldWrap.addView(magnifier, magLp);
         LayoutParams inLp = new LayoutParams(LayoutParams.MATCH_PARENT,
                 LayoutParams.WRAP_CONTENT);
-        inLp.leftMargin = Apple.dp(act, 24f);
+        inLp.leftMargin = Design.dp(act, 24f);
         fieldWrap.addView(input, inLp);
         LayoutParams fieldLp = new LayoutParams(LayoutParams.MATCH_PARENT,
-                Apple.dp(act, 36f), Gravity.TOP | Gravity.START);
-        fieldLp.leftMargin = Apple.dp(act, 16f);
-        fieldLp.rightMargin = Apple.dp(act, 16f);
+                Design.dp(act, 36f), Gravity.TOP | Gravity.START);
+        fieldLp.leftMargin = Design.dp(act, 16f);
+        fieldLp.rightMargin = Design.dp(act, 16f);
         LayoutParams chromeLp = new LayoutParams(LayoutParams.MATCH_PARENT,
                 LayoutParams.WRAP_CONTENT);
         chrome.addView(fieldWrap, chromeLp);
-        fieldWrap.setBackground(Apple.round(0xFF1C1C1E, Apple.dp(act, 10f)));
+        fieldWrap.setBackground(Design.round(0xFF1C1C1E, Design.dp(act, 10f)));
 
         status = new TextView(act);
-        status.setTextColor(Apple.LABEL_2);
+        status.setTextColor(Design.LABEL_2);
         status.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 13f);
         status.setIncludeFontPadding(false);
         status.setBackgroundColor(0xFF000000);
-        status.setPadding(Apple.dp(act, 16f), Apple.dp(act, 7f),
-                Apple.dp(act, 16f), Apple.dp(act, 7f));
+        status.setPadding(Design.dp(act, 16f), Design.dp(act, 7f),
+                Design.dp(act, 16f), Design.dp(act, 7f));
         chrome.addView(status, new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
         surface = new ListSurface(act);
         surface.setListener(this);
-        surface.setBottomInset(bottomInset + Apple.dp(act, 12f));
+        surface.setBottomInset(bottomInset + Design.dp(act, 12f));
         addView(surface, 0, new LayoutParams(LayoutParams.MATCH_PARENT,
                 LayoutParams.MATCH_PARENT));
         // Both bands are wrap_content, so their real height is only known after
@@ -120,7 +120,7 @@ public class SearchPage extends FrameLayout implements FileAdapter.Listener {
             @Override
             public void onScrolled(RecyclerView rv, int dx, int dy) {
                 nav.setCollapseProgress(surface.scrolledDistance()
-                        / Apple.dp(act, Apple.LARGE_TITLE_DP));
+                        / Design.dp(act, Design.LARGE_TITLE_DP));
             }
         });
 
@@ -182,7 +182,7 @@ public class SearchPage extends FrameLayout implements FileAdapter.Listener {
 
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        lp.topMargin = Apple.dp(act, 8f);
+        lp.topMargin = Design.dp(act, 8f);
         chrome.addView(host, lp);
         // A different chip set can change the band height, so re-clip the list.
         chrome.post(() -> surface.setTopInset(topInset + chrome.getHeight()));
@@ -195,12 +195,12 @@ public class SearchPage extends FrameLayout implements FileAdapter.Listener {
         chip.setTypeface(android.graphics.Typeface.create("sans-serif",
                 android.graphics.Typeface.BOLD));
         chip.setIncludeFontPadding(false);
-        chip.setPadding(Apple.dp(act, 12f), Apple.dp(act, 6f),
-                Apple.dp(act, 12f), Apple.dp(act, 6f));
+        chip.setPadding(Design.dp(act, 12f), Design.dp(act, 6f),
+                Design.dp(act, 12f), Design.dp(act, 6f));
         boolean active = dir.equals(scope);
         chip.setTextColor(active ? 0xFF000000 : 0xFFEBEBF5);
-        chip.setBackground(Apple.round(active ? 0xFF0A84FF : 0xFF1C1C1E,
-                Apple.dp(act, 15f)));
+        chip.setBackground(Design.round(active ? 0xFF0A84FF : 0xFF1C1C1E,
+                Design.dp(act, 15f)));
         chip.setClickable(true);
         chip.setFocusable(true);
         if (!dir.exists()) {
@@ -214,7 +214,7 @@ public class SearchPage extends FrameLayout implements FileAdapter.Listener {
         });
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        lp.leftMargin = Apple.dp(act, 16f);
+        lp.leftMargin = Design.dp(act, 16f);
         parent.addView(chip, lp);
     }
 

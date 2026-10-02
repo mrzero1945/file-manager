@@ -41,7 +41,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:requestLegacyExternalStorage="true"
-        android:theme="@style/Theme.AppleFiles">
+        android:theme="@style/Theme.FileManager">
 
         <activity
             android:name=".MainActivity"

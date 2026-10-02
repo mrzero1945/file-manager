@@ -43,19 +43,19 @@ public class NavBar extends FrameLayout {
 
     public NavBar(Context ctx) {
         super(ctx);
-        int status = Apple.statusBarHeight(ctx);
+        int status = Design.statusBarHeight(ctx);
         setClipToPadding(false);
         setClipChildren(true);
         setWillNotDraw(false);
         // Opaque: the content is clipped away below, so the bar reads as its own
         // layer instead of the list showing through it.
-        setBackgroundColor(Apple.BG);
+        setBackgroundColor(Design.BG);
 
         // Nav line: the only row holding buttons, so it owns the 44pt height and
         // the actions centre in it.
         navLine = new FrameLayout(ctx);
         LayoutParams lineLp = new LayoutParams(LayoutParams.MATCH_PARENT,
-                Apple.dp(ctx, Apple.NAV_BAR_DP));
+                Design.dp(ctx, Design.NAV_BAR_DP));
         lineLp.gravity = Gravity.TOP;
         lineLp.topMargin = status;
         addView(navLine, lineLp);
@@ -76,48 +76,48 @@ public class NavBar extends FrameLayout {
 
         // Large title, directly under the nav line.
         largeTitle = new TextView(ctx);
-        largeTitle.setTextColor(Apple.LABEL);
-        largeTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP, Apple.LARGE_TITLE_SP);
+        largeTitle.setTextColor(Design.LABEL);
+        largeTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP, Design.LARGE_TITLE_SP);
         largeTitle.setTypeface(android.graphics.Typeface.DEFAULT_BOLD);
         largeTitle.setLetterSpacing(-0.022f);
         largeTitle.setIncludeFontPadding(false);
         largeTitle.setSingleLine(true);
         largeTitle.setEllipsize(android.text.TextUtils.TruncateAt.END);
         LayoutParams ltLp = new LayoutParams(LayoutParams.MATCH_PARENT,
-                Apple.dp(ctx, 52f));
+                Design.dp(ctx, 52f));
         ltLp.gravity = Gravity.TOP;
-        ltLp.topMargin = status + Apple.dp(ctx, Apple.NAV_BAR_DP);
-        ltLp.leftMargin = Apple.dp(ctx, 16f);
-        ltLp.rightMargin = Apple.dp(ctx, 16f);
+        ltLp.topMargin = status + Design.dp(ctx, Design.NAV_BAR_DP);
+        ltLp.leftMargin = Design.dp(ctx, 16f);
+        ltLp.rightMargin = Design.dp(ctx, 16f);
         addView(largeTitle, ltLp);
 
         // Folder path / status line, right under the title.
         pathLine = new TextView(ctx);
-        pathLine.setTextColor(Apple.LABEL_2);
+        pathLine.setTextColor(Design.LABEL_2);
         pathLine.setTextSize(TypedValue.COMPLEX_UNIT_SP, 13f);
         pathLine.setIncludeFontPadding(false);
         pathLine.setSingleLine(true);
         pathLine.setEllipsize(android.text.TextUtils.TruncateAt.END);
         LayoutParams pLp = new LayoutParams(LayoutParams.MATCH_PARENT,
-                Apple.dp(ctx, 24f));
+                Design.dp(ctx, 24f));
         pLp.gravity = Gravity.TOP;
-        pLp.topMargin = status + Apple.dp(ctx, Apple.NAV_BAR_DP) + Apple.dp(ctx, 52f);
-        pLp.leftMargin = Apple.dp(ctx, 16f);
-        pLp.rightMargin = Apple.dp(ctx, 16f);
+        pLp.topMargin = status + Design.dp(ctx, Design.NAV_BAR_DP) + Design.dp(ctx, 52f);
+        pLp.leftMargin = Design.dp(ctx, 16f);
+        pLp.rightMargin = Design.dp(ctx, 16f);
         addView(pathLine, pLp);
 
         // Bottom edge of the bar: the boundary with the content below.
         hairline = new View(ctx);
-        hairline.setBackgroundColor(Apple.SEPARATOR);
-        LayoutParams hLp = new LayoutParams(LayoutParams.MATCH_PARENT, Apple.hairline(ctx));
+        hairline.setBackgroundColor(Design.SEPARATOR);
+        LayoutParams hLp = new LayoutParams(LayoutParams.MATCH_PARENT, Design.hairline(ctx));
         hLp.gravity = Gravity.BOTTOM;
         addView(hairline, hLp);
     }
 
     /** Height a page must reserve so its content clears the whole bar. */
     public static int expandedHeightFor(Context ctx) {
-        return Apple.statusBarHeight(ctx) + Apple.dp(ctx, Apple.NAV_BAR_DP)
-                + Apple.dp(ctx, TITLE_BLOCK_DP);
+        return Design.statusBarHeight(ctx) + Design.dp(ctx, Design.NAV_BAR_DP)
+                + Design.dp(ctx, TITLE_BLOCK_DP);
     }
 
     public void setLargeTitle(CharSequence text) {
@@ -156,19 +156,19 @@ public class NavBar extends FrameLayout {
         LinearLayout box = new LinearLayout(ctx);
         box.setOrientation(LinearLayout.HORIZONTAL);
         box.setGravity(Gravity.CENTER_VERTICAL);
-        box.setPadding(Apple.dp(ctx, 7f), 0, Apple.dp(ctx, 7f), 0);
-        box.setBackground(Apple.round(0xFF1C1C1E, Apple.dp(ctx, 10f)));
+        box.setPadding(Design.dp(ctx, 7f), 0, Design.dp(ctx, 7f), 0);
+        box.setBackground(Design.round(0xFF1C1C1E, Design.dp(ctx, 10f)));
 
         android.widget.ImageView magnifier = new android.widget.ImageView(ctx);
         magnifier.setImageResource(R.drawable.ic_tab_search);
-        magnifier.setColorFilter(Apple.GRAY, android.graphics.PorterDuff.Mode.SRC_IN);
+        magnifier.setColorFilter(Design.GRAY, android.graphics.PorterDuff.Mode.SRC_IN);
         box.addView(magnifier, new LinearLayout.LayoutParams(
-                Apple.dp(ctx, 15f), Apple.dp(ctx, 15f)));
+                Design.dp(ctx, 15f), Design.dp(ctx, 15f)));
 
         android.widget.EditText input = new android.widget.EditText(ctx);
         input.setHint("Search");
-        input.setHintTextColor(Apple.GRAY);
-        input.setTextColor(Apple.LABEL);
+        input.setHintTextColor(Design.GRAY);
+        input.setTextColor(Design.LABEL);
         input.setTextSize(TypedValue.COMPLEX_UNIT_SP, 17f);
         input.setBackgroundColor(0x00000000);
         input.setSingleLine(true);

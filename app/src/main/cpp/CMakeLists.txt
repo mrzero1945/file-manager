@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.22.1)
-project(applefiles CXX)
+project(filemanager CXX)
 
-add_library(applefiles SHARED af_fs.cpp)
+add_library(filemanager SHARED af_fs.cpp)
 
-target_compile_features(applefiles PRIVATE cxx_std_17)
-target_compile_options(applefiles PRIVATE
+target_compile_features(filemanager PRIVATE cxx_std_17)
+target_compile_options(filemanager PRIVATE
         -Wall
         -Wextra
         -Wno-unused-parameter
@@ -14,6 +14,6 @@ target_compile_options(applefiles PRIVATE
         -fdata-sections)
 
 # 16 KB page alignment: required from API 35 on, harmless before that.
-target_link_options(applefiles PRIVATE
+target_link_options(filemanager PRIVATE
         -Wl,--gc-sections
         -Wl,-z,max-page-size=16384)

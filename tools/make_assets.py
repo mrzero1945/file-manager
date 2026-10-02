@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Build every visual resource for Apple Files from tools/designspec.py.
+Build every visual resource for File Manager from tools/designspec.py.
 
 Outputs
 -------
@@ -361,7 +361,7 @@ def inkscape_png(svg, png, width):
 
 
 def main():
-    print("Apple Files - asset build")
+    print("File Manager - asset build")
     print("  inkscape:", inkscape_version())
 
     for name, parts in ds.ICONS.items():

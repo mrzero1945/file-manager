@@ -51,7 +51,7 @@ public class DetailPane extends FrameLayout {
         body.setOrientation(LinearLayout.VERTICAL);
         // The body starts below the nav band and scrolls, so the large title is
         // the first thing inside it rather than an overlay on the bar.
-        body.setPadding(0, Apple.dp(ctx, 4f), 0, 0);
+        body.setPadding(0, Design.dp(ctx, 4f), 0, 0);
         LayoutParams bodyLp = new LayoutParams(LayoutParams.MATCH_PARENT,
                 LayoutParams.MATCH_PARENT);
         bodyLp.topMargin = NavBar.expandedHeightFor(ctx);
@@ -83,14 +83,14 @@ public class DetailPane extends FrameLayout {
         LinearLayout box = new LinearLayout(ctx);
         box.setOrientation(LinearLayout.VERTICAL);
         box.setGravity(Gravity.CENTER);
-        box.setPadding(Apple.dp(ctx, 32f), Apple.dp(ctx, 64f), Apple.dp(ctx, 32f), Apple.dp(ctx, 64f));
+        box.setPadding(Design.dp(ctx, 32f), Design.dp(ctx, 64f), Design.dp(ctx, 32f), Design.dp(ctx, 64f));
 
         ImageView ic = new ImageView(ctx);
         ic.setImageResource(iconRes);
         ic.setColorFilter(0x1FFFFFFF);
         LinearLayout.LayoutParams ilp = new LinearLayout.LayoutParams(
-                Apple.dp(ctx, 56f), Apple.dp(ctx, 56f));
-        ilp.bottomMargin = Apple.dp(ctx, 16f);
+                Design.dp(ctx, 56f), Design.dp(ctx, 56f));
+        ilp.bottomMargin = Design.dp(ctx, 16f);
         box.addView(ic, ilp);
 
         TextView t = new TextView(ctx);
@@ -113,7 +113,7 @@ public class DetailPane extends FrameLayout {
             s.setIncludeFontPadding(false);
             LinearLayout.LayoutParams slp = new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            slp.topMargin = Apple.dp(ctx, 6f);
+            slp.topMargin = Design.dp(ctx, 6f);
             box.addView(s, slp);
         }
         return box;

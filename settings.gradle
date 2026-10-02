@@ -20,5 +20,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "AppleFiles"
+rootProject.name = "FileManager"
 include ':app'

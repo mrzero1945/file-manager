@@ -74,7 +74,7 @@ android {
 
     applicationVariants.configureEach { variant ->
         variant.outputs.configureEach {
-            output -> output.outputFileName = "AppleFiles-${variant.name}-${variant.versionName}.apk".toString()
+            output -> output.outputFileName = "FileManager-${variant.name}-${variant.versionName}.apk".toString()
         }
     }
 }

@@ -101,33 +101,33 @@ public class BrowsePage extends FrameLayout implements FileAdapter.Listener {
         searchField.setHintTextColor(0xFF8E8E93);
         searchField.setTextColor(0xFFFFFFFF);
         searchField.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 16f);
-        searchField.setBackground(Apple.round(0xFF1C1C1E, Apple.dp(act, 10f)));
+        searchField.setBackground(Design.round(0xFF1C1C1E, Design.dp(act, 10f)));
         searchField.setSingleLine(true);
         searchField.setImeOptions(android.view.inputmethod.EditorInfo.IME_ACTION_SEARCH);
-        searchField.setPadding(Apple.dp(act, 12f), Apple.dp(act, 8f),
-                Apple.dp(act, 12f), Apple.dp(act, 8f));
+        searchField.setPadding(Design.dp(act, 12f), Design.dp(act, 8f),
+                Design.dp(act, 12f), Design.dp(act, 8f));
 
         android.widget.ImageView magnifier = new android.widget.ImageView(act);
         magnifier.setImageResource(R.drawable.ic_tab_search);
         magnifier.setColorFilter(0xFF8E8E93, android.graphics.PorterDuff.Mode.SRC_IN);
         FrameLayout wrap = new FrameLayout(act);
-        LayoutParams magLp = new LayoutParams(Apple.dp(act, 15f), Apple.dp(act, 15f),
+        LayoutParams magLp = new LayoutParams(Design.dp(act, 15f), Design.dp(act, 15f),
                 Gravity.CENTER_VERTICAL | Gravity.START);
-        magLp.leftMargin = Apple.dp(act, 10f);
+        magLp.leftMargin = Design.dp(act, 10f);
         wrap.addView(magnifier, magLp);
         LayoutParams inLp = new LayoutParams(LayoutParams.MATCH_PARENT,
                 LayoutParams.WRAP_CONTENT);
-        inLp.leftMargin = Apple.dp(act, 24f);
+        inLp.leftMargin = Design.dp(act, 24f);
         wrap.addView(searchField, inLp);
-        wrap.setBackground(Apple.round(0xFF1C1C1E, Apple.dp(act, 10f)));
+        wrap.setBackground(Design.round(0xFF1C1C1E, Design.dp(act, 10f)));
 
         searchBand = wrap;
         LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT,
-                Apple.dp(act, 36f), Gravity.TOP);
+                Design.dp(act, 36f), Gravity.TOP);
         // Sits under the whole bar, so it can never cover the pinned title.
-        lp.topMargin = NavBar.expandedHeightFor(act) + Apple.dp(act, 8f);
-        lp.leftMargin = Apple.dp(act, 16f);
-        lp.rightMargin = Apple.dp(act, 16f);
+        lp.topMargin = NavBar.expandedHeightFor(act) + Design.dp(act, 8f);
+        lp.leftMargin = Design.dp(act, 16f);
+        lp.rightMargin = Design.dp(act, 16f);
         addView(wrap, lp);
 
         searchField.setOnEditorActionListener((v, actionId, ev) -> {
@@ -176,8 +176,8 @@ public class BrowsePage extends FrameLayout implements FileAdapter.Listener {
     private int searchBandHeight() {
         if (searchBand == null) return 0;
         return searchBand.getHeight() > 0
-                ? searchBand.getHeight() + Apple.dp(act, 8f)
-                : Apple.dp(act, 36f) + Apple.dp(act, 8f);
+                ? searchBand.getHeight() + Design.dp(act, 8f)
+                : Design.dp(act, 36f) + Design.dp(act, 8f);
     }
 
     /** Clears the filter, e.g. when the folder view is refreshed from disk. */
@@ -301,8 +301,8 @@ public class BrowsePage extends FrameLayout implements FileAdapter.Listener {
                 LayoutParams.MATCH_PARENT));
         // The list starts under the bar *and* the search band, so neither is
         // ever drawn over by a row.
-        level.surface.setTopInset(topInset + Apple.dp(act, 4f) + searchBandHeight());
-        level.surface.setBottomInset(bottomInset + Apple.dp(act, 12f));
+        level.surface.setTopInset(topInset + Design.dp(act, 4f) + searchBandHeight());
+        level.surface.setBottomInset(bottomInset + Design.dp(act, 12f));
         level.surface.adapter.setListener(this);
         level.surface.list.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -481,7 +481,7 @@ public class BrowsePage extends FrameLayout implements FileAdapter.Listener {
         level.firstOffset = 0;
         // The large title block is 52pt tall, so the title has fully cleared the
         // nav line by the time that much has scrolled under the bar.
-        nav.setCollapseProgress(scrolled / Apple.dp(act, Apple.LARGE_TITLE_DP));
+        nav.setCollapseProgress(scrolled / Design.dp(act, Design.LARGE_TITLE_DP));
         // Title, path and actions change with the level, not on every frame.
         if (navLevel != level) {
             navLevel = level;
@@ -583,10 +583,10 @@ public class BrowsePage extends FrameLayout implements FileAdapter.Listener {
     private void buildSelectionBar(android.content.Context ctx) {
         selectionBar = new LinearLayout(ctx);
         selectionBar.setOrientation(LinearLayout.VERTICAL);
-        selectionBar.setBackground(Apple.round(0xFF1C1C1E, Apple.dp(ctx, 18f)));
-        selectionBar.setElevation(Apple.dp(ctx, 14f));
-        selectionBar.setPadding(Apple.dp(ctx, 14f), Apple.dp(ctx, 11f),
-                Apple.dp(ctx, 14f), Apple.dp(ctx, 11f));
+        selectionBar.setBackground(Design.round(0xFF1C1C1E, Design.dp(ctx, 18f)));
+        selectionBar.setElevation(Design.dp(ctx, 14f));
+        selectionBar.setPadding(Design.dp(ctx, 14f), Design.dp(ctx, 11f),
+                Design.dp(ctx, 14f), Design.dp(ctx, 11f));
         selectionBar.setVisibility(GONE);
 
         selectionTitle = new TextView(ctx);
@@ -599,7 +599,7 @@ public class BrowsePage extends FrameLayout implements FileAdapter.Listener {
         selectionTitle.setGravity(Gravity.CENTER);
         LinearLayout.LayoutParams tlp = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        tlp.bottomMargin = Apple.dp(ctx, 9f);
+        tlp.bottomMargin = Design.dp(ctx, 9f);
         selectionBar.addView(selectionTitle, tlp);
 
         selectionActions = new LinearLayout(ctx);
@@ -610,9 +610,9 @@ public class BrowsePage extends FrameLayout implements FileAdapter.Listener {
 
         LayoutParams lp = new LayoutParams(LayoutParams.WRAP_CONTENT,
                 LayoutParams.WRAP_CONTENT, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL);
-        lp.bottomMargin = bottomInset + Apple.dp(ctx, 12f);
-        lp.leftMargin = Apple.dp(ctx, 20f);
-        lp.rightMargin = Apple.dp(ctx, 20f);
+        lp.bottomMargin = bottomInset + Design.dp(ctx, 12f);
+        lp.leftMargin = Design.dp(ctx, 20f);
+        lp.rightMargin = Design.dp(ctx, 20f);
         addView(selectionBar, lp);
         populateSelectionActions();
     }
@@ -641,7 +641,7 @@ public class BrowsePage extends FrameLayout implements FileAdapter.Listener {
     }
 
     private void addAction(int icon, String label, Runnable onClick) {
-        addAction(icon, label, Apple.LABEL, onClick);
+        addAction(icon, label, Design.LABEL, onClick);
     }
 
     private void addAction(int icon, String label, int color, Runnable onClick) {
@@ -652,13 +652,13 @@ public class BrowsePage extends FrameLayout implements FileAdapter.Listener {
         col.setClickable(true);
         col.setFocusable(true);
         col.setContentDescription(label);
-        col.setPadding(Apple.dp(ctx, 6f), 0, Apple.dp(ctx, 6f), 0);
+        col.setPadding(Design.dp(ctx, 6f), 0, Design.dp(ctx, 6f), 0);
         col.setBackground(Controls.pressable(0xFF2C2C2E));
 
         ImageView ic = new ImageView(ctx);
         ic.setImageResource(icon);
         ic.setColorFilter(color, android.graphics.PorterDuff.Mode.SRC_IN);
-        col.addView(ic, new LinearLayout.LayoutParams(Apple.dp(ctx, 21f), Apple.dp(ctx, 21f)));
+        col.addView(ic, new LinearLayout.LayoutParams(Design.dp(ctx, 21f), Design.dp(ctx, 21f)));
 
         TextView tv = new TextView(ctx);
         tv.setText(label);
@@ -667,12 +667,12 @@ public class BrowsePage extends FrameLayout implements FileAdapter.Listener {
         tv.setIncludeFontPadding(false);
         LinearLayout.LayoutParams tlp = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        tlp.topMargin = Apple.dp(ctx, 3f);
+        tlp.topMargin = Design.dp(ctx, 3f);
         col.addView(tv, tlp);
 
         LinearLayout.LayoutParams clp = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        clp.leftMargin = Apple.dp(ctx, 14f);
+        clp.leftMargin = Design.dp(ctx, 14f);
         col.setLayoutParams(clp);
         col.setOnClickListener(v -> onClick.run());
         selectionActions.addView(col);
@@ -691,7 +691,7 @@ public class BrowsePage extends FrameLayout implements FileAdapter.Listener {
         int n = a.selectedCount();
         populateSelectionActions();
         if (n == 0) {
-            selectionBar.animate().alpha(0f).translationY(Apple.dp(act, 18f))
+            selectionBar.animate().alpha(0f).translationY(Design.dp(act, 18f))
                     .setDuration(150)
                     .withEndAction(() -> selectionBar.setVisibility(GONE)).start();
             return;
@@ -699,7 +699,7 @@ public class BrowsePage extends FrameLayout implements FileAdapter.Listener {
         selectionTitle.setText(n == 1 ? "1 Item Selected" : n + " Items Selected");
         if (selectionBar.getVisibility() != VISIBLE) {
             selectionBar.setAlpha(0f);
-            selectionBar.setTranslationY(Apple.dp(act, 18f));
+            selectionBar.setTranslationY(Design.dp(act, 18f));
             selectionBar.setVisibility(VISIBLE);
             selectionBar.animate().alpha(1f).translationY(0f)
                     .setDuration(250).setInterpolator(Draw.SPRING).start();

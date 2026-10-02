@@ -25,7 +25,7 @@ import java.util.List;
  */
 public final class Root {
 
-    private static final String TAG = "AppleFilesRoot";
+    private static final String TAG = "FileManagerRoot";
     private static final String PREFS = "root_access";
     private static final String KEY_STATE = "state";
     /** Unknown / granted / denied, so the Magisk dialog is shown at most once. */

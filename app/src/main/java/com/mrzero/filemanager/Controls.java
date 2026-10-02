@@ -22,7 +22,7 @@ public final class Controls {
         ImageView v = new ImageView(ctx);
         v.setImageResource(iconRes);
         v.setColorFilter(tint, android.graphics.PorterDuff.Mode.SRC_IN);
-        v.setPadding(Apple.dp(ctx, 9f), Apple.dp(ctx, 9f), Apple.dp(ctx, 9f), Apple.dp(ctx, 9f));
+        v.setPadding(Design.dp(ctx, 9f), Design.dp(ctx, 9f), Design.dp(ctx, 9f), Design.dp(ctx, 9f));
         v.setClickable(true);
         v.setFocusable(true);
         if (desc != null) v.setContentDescription(desc);
@@ -36,13 +36,13 @@ public final class Controls {
         TextView v = new TextView(ctx);
         v.setText(label);
         v.setTextColor(color);
-        v.setTextSize(TypedValue.COMPLEX_UNIT_SP, Apple.BUTTON_SP);
+        v.setTextSize(TypedValue.COMPLEX_UNIT_SP, Design.BUTTON_SP);
         v.setTypeface(android.graphics.Typeface.create("sans-serif",
                 android.graphics.Typeface.BOLD));
         v.setLetterSpacing(-0.011f);
         v.setIncludeFontPadding(false);
         v.setGravity(Gravity.CENTER);
-        v.setPadding(Apple.dp(ctx, 8f), Apple.dp(ctx, 6f), Apple.dp(ctx, 8f), Apple.dp(ctx, 6f));
+        v.setPadding(Design.dp(ctx, 8f), Design.dp(ctx, 6f), Design.dp(ctx, 8f), Design.dp(ctx, 6f));
         v.setClickable(true);
         v.setFocusable(true);
         if (desc != null) v.setContentDescription(desc);
@@ -56,7 +56,7 @@ public final class Controls {
         android.graphics.drawable.StateListDrawable d =
                 new android.graphics.drawable.StateListDrawable();
         d.addState(new int[]{android.R.attr.state_pressed},
-                Apple.round(highlight, 20f));
+                Design.round(highlight, 20f));
         d.addState(new int[]{}, new android.graphics.drawable.ColorDrawable(0x00000000));
         return d;
     }
@@ -74,11 +74,11 @@ public final class Controls {
         public Toggle(Context ctx, boolean initial) {
             super(ctx);
             checked = initial;
-            trackHeight = Apple.dp(ctx, 31f);
-            pad = Apple.dp(ctx, 2f);
+            trackHeight = Design.dp(ctx, 31f);
+            pad = Design.dp(ctx, 2f);
             knobSize = trackHeight - pad * 2;
             setLayoutParams(new FrameLayout.LayoutParams(
-                    Apple.dp(ctx, 51f), trackHeight));
+                    Design.dp(ctx, 51f), trackHeight));
 
             track = new android.graphics.drawable.GradientDrawable();
             track.setShape(android.graphics.drawable.GradientDrawable.RECTANGLE);
@@ -89,7 +89,7 @@ public final class Controls {
             setFocusable(true);
 
             knob = new View(ctx);
-            knob.setBackground(Apple.round(0xFFFFFFFF, knobSize / 2f));
+            knob.setBackground(Design.round(0xFFFFFFFF, knobSize / 2f));
             addView(knob, new FrameLayout.LayoutParams(knobSize, knobSize));
             apply();
         }
@@ -136,9 +136,9 @@ public final class Controls {
         public Segmented(Context ctx, String[] labels, int initial) {
             super(ctx);
             setOrientation(HORIZONTAL);
-            setPadding(Apple.dp(ctx, 2f), Apple.dp(ctx, 2f),
-                    Apple.dp(ctx, 2f), Apple.dp(ctx, 2f));
-            setBackground(Apple.round(0xFF2C2C2E, Apple.dp(ctx, 9f)));
+            setPadding(Design.dp(ctx, 2f), Design.dp(ctx, 2f),
+                    Design.dp(ctx, 2f), Design.dp(ctx, 2f));
+            setBackground(Design.round(0xFF2C2C2E, Design.dp(ctx, 9f)));
 
             tabs = new TextView[labels.length];
             for (int i = 0; i < labels.length; i++) {
@@ -150,8 +150,8 @@ public final class Controls {
                 t.setLetterSpacing(-0.008f);
                 t.setGravity(Gravity.CENTER);
                 t.setSingleLine(true);
-                t.setMinWidth(Apple.dp(ctx, 62f));
-                t.setMinHeight(Apple.dp(ctx, 28f));
+                t.setMinWidth(Design.dp(ctx, 62f));
+                t.setMinHeight(Design.dp(ctx, 28f));
                 t.setIncludeFontPadding(false);
                 tabs[i] = t;
                 final int index = i;
@@ -169,8 +169,8 @@ public final class Controls {
             for (int i = 0; i < tabs.length; i++) {
                 boolean active = i == index;
                 tabs[i].setTextColor(active ? 0xFF000000 : 0xFFEBEBF5);
-                tabs[i].setBackground(Apple.round(active ? 0xFFE8E8EA : 0x00000000,
-                        Apple.dp(getContext(), 7f)));
+                tabs[i].setBackground(Design.round(active ? 0xFFE8E8EA : 0x00000000,
+                        Design.dp(getContext(), 7f)));
             }
             if (notify && onChange != null) onChange.onChange(index);
         }
@@ -182,7 +182,7 @@ public final class Controls {
     public static LinearLayout group(Context ctx) {
         LinearLayout g = new LinearLayout(ctx);
         g.setOrientation(LinearLayout.VERTICAL);
-        g.setBackground(Apple.round(0xFF1C1C1E, Apple.dp(ctx, 10f)));
+        g.setBackground(Design.round(0xFF1C1C1E, Design.dp(ctx, 10f)));
         return g;
     }
 
@@ -190,12 +190,12 @@ public final class Controls {
         TextView t = new TextView(ctx);
         t.setText(text.toUpperCase());
         t.setTextColor(0x99EBEBF5);
-        t.setTextSize(TypedValue.COMPLEX_UNIT_SP, Apple.SECTION_SP);
+        t.setTextSize(TypedValue.COMPLEX_UNIT_SP, Design.SECTION_SP);
         t.setTypeface(android.graphics.Typeface.create("sans-serif-medium",
                 android.graphics.Typeface.BOLD));
         t.setLetterSpacing(-0.006f);
         t.setIncludeFontPadding(false);
-        t.setPadding(Apple.dp(ctx, 16f), Apple.dp(ctx, 22f), Apple.dp(ctx, 16f), Apple.dp(ctx, 7f));
+        t.setPadding(Design.dp(ctx, 16f), Design.dp(ctx, 22f), Design.dp(ctx, 16f), Design.dp(ctx, 7f));
         return t;
     }
 
@@ -205,8 +205,8 @@ public final class Controls {
         LinearLayout row = new LinearLayout(ctx);
         row.setOrientation(LinearLayout.HORIZONTAL);
         row.setGravity(Gravity.CENTER_VERTICAL);
-        row.setMinimumHeight(Apple.dp(ctx, 46f));
-        row.setPadding(Apple.dp(ctx, 16f), Apple.dp(ctx, 8f), Apple.dp(ctx, 16f), Apple.dp(ctx, 8f));
+        row.setMinimumHeight(Design.dp(ctx, 46f));
+        row.setPadding(Design.dp(ctx, 16f), Design.dp(ctx, 8f), Design.dp(ctx, 16f), Design.dp(ctx, 8f));
 
         TextView l = new TextView(ctx);
         l.setText(label);
@@ -225,14 +225,14 @@ public final class Controls {
             v.setIncludeFontPadding(false);
             LinearLayout.LayoutParams vlp = new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            vlp.leftMargin = Apple.dp(ctx, 8f);
+            vlp.leftMargin = Design.dp(ctx, 8f);
             row.addView(v, vlp);
         }
         // Trailing control, as in iOS Settings.
         if (control != null) {
             LinearLayout.LayoutParams clp = new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            clp.leftMargin = Apple.dp(ctx, 12f);
+            clp.leftMargin = Design.dp(ctx, 12f);
             row.addView(control, clp);
         }
         if (onClick != null) {
@@ -248,8 +248,8 @@ public final class Controls {
     public static View insetDivider(Context ctx) {
         View v = new View(ctx);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT, Apple.hairline(ctx));
-        lp.leftMargin = Apple.dp(ctx, 16f);
+                ViewGroup.LayoutParams.MATCH_PARENT, Design.hairline(ctx));
+        lp.leftMargin = Design.dp(ctx, 16f);
         v.setLayoutParams(lp);
         v.setBackgroundColor(0x3FD4D4D6);
         return v;
@@ -259,7 +259,7 @@ public final class Controls {
     public static View divider(Context ctx) {
         View v = new View(ctx);
         v.setLayoutParams(new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT, Apple.hairline(ctx)));
+                ViewGroup.LayoutParams.MATCH_PARENT, Design.hairline(ctx)));
         v.setBackgroundColor(0x3FD4D4D6);
         return v;
     }

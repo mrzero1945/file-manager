@@ -2,8 +2,8 @@
 <resources>
 
     <!-- ============ typography ============ -->
-    <!-- Apple type ramp, expressed as text appearances. -->
-    <style name="AF.LargeTitle" parent="">
+    <!-- Type ramp, expressed as text appearances. -->
+    <style name="FM.LargeTitle" parent="">
         <item name="android:textSize">32sp</item>
         <item name="android:textColor">@color/label</item>
         <item name="android:fontFamily">sans-serif</item>
@@ -12,7 +12,7 @@
         <item name="android:includeFontPadding">false</item>
     </style>
 
-    <style name="AF.NavTitle" parent="">
+    <style name="FM.NavTitle" parent="">
         <item name="android:textSize">17sp</item>
         <item name="android:textColor">@color/label</item>
         <item name="android:fontFamily">sans-serif-medium</item>
@@ -21,7 +21,7 @@
         <item name="android:includeFontPadding">false</item>
     </style>
 
-    <style name="AF.Title2" parent="">
+    <style name="FM.Title2" parent="">
         <item name="android:textSize">22sp</item>
         <item name="android:textColor">@color/label</item>
         <item name="android:fontFamily">sans-serif</item>
@@ -30,7 +30,7 @@
         <item name="android:includeFontPadding">false</item>
     </style>
 
-    <style name="AF.Headline" parent="">
+    <style name="FM.Headline" parent="">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/label</item>
         <item name="android:fontFamily">sans-serif</item>
@@ -39,7 +39,7 @@
         <item name="android:includeFontPadding">false</item>
     </style>
 
-    <style name="AF.Body" parent="">
+    <style name="FM.Body" parent="">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/label</item>
         <item name="android:fontFamily">sans-serif</item>
@@ -47,11 +47,11 @@
         <item name="android:includeFontPadding">false</item>
     </style>
 
-    <style name="AF.RowTitle" parent="AF.Body">
+    <style name="FM.RowTitle" parent="FM.Body">
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="AF.RowSubtitle" parent="">
+    <style name="FM.RowSubtitle" parent="">
         <item name="android:textSize">13sp</item>
         <item name="android:textColor">@color/label_2</item>
         <item name="android:fontFamily">sans-serif</item>
@@ -59,7 +59,7 @@
         <item name="android:includeFontPadding">false</item>
     </style>
 
-    <style name="AF.Section" parent="">
+    <style name="FM.Section" parent="">
         <item name="android:textSize">13sp</item>
         <item name="android:textColor">@color/label_2</item>
         <item name="android:fontFamily">sans-serif-medium</item>
@@ -68,14 +68,14 @@
         <item name="android:includeFontPadding">false</item>
     </style>
 
-    <style name="AF.TabLabel" parent="">
+    <style name="FM.TabLabel" parent="">
         <item name="android:textSize">10sp</item>
         <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:letterSpacing">0.004</item>
         <item name="android:includeFontPadding">false</item>
     </style>
 
-    <style name="AF.Button" parent="">
+    <style name="FM.Button" parent="">
         <item name="android:textSize">17sp</item>
         <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:textColor">@color/blue</item>
@@ -83,7 +83,7 @@
         <item name="android:includeFontPadding">false</item>
     </style>
 
-    <style name="AF.Cell" parent="">
+    <style name="FM.Cell" parent="">
         <item name="android:minHeight">52dp</item>
         <item name="android:background">@color/bg_card</item>
         <item name="android:gravity">center_vertical</item>
@@ -91,14 +91,14 @@
         <item name="android:paddingEnd">12dp</item>
     </style>
 
-    <style name="AF.Divider" parent="">
+    <style name="FM.Divider" parent="">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">0.33dp</item>
         <item name="android:background">@color/separator</item>
     </style>
 
     <!-- ============ theme ============ -->
-    <style name="Theme.AppleFiles" parent="Theme.MaterialComponents.NoActionBar">
+    <style name="Theme.FileManager" parent="Theme.MaterialComponents.NoActionBar">
         <item name="android:windowBackground">@color/bg</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
@@ -109,17 +109,17 @@
         <item name="android:colorAccent">@color/blue</item>
         <item name="colorPrimary">@color/blue</item>
         <item name="colorAccent">@color/blue</item>
-        <item name="android:windowAnimationStyle">@style/AF.WindowAnim</item>
+        <item name="android:windowAnimationStyle">@style/FM.WindowAnim</item>
     </style>
 
-    <style name="AF.WindowAnim" parent="@android:style/Animation.Activity">
+    <style name="FM.WindowAnim" parent="@android:style/Animation.Activity">
         <item name="android:activityOpenEnterAnimation">@anim/slide_up</item>
         <item name="android:activityOpenExitAnimation">@anim/fade_out_slight</item>
         <item name="android:activityCloseEnterAnimation">@anim/fade_in_slight</item>
         <item name="android:activityCloseExitAnimation">@anim/slide_down</item>
     </style>
 
-    <style name="AF.Sheet" parent="">
+    <style name="FM.Sheet" parent="">
         <item name="android:background">@color/bg_elevated</item>
         <item name="android:orientation">vertical</item>
     </style>

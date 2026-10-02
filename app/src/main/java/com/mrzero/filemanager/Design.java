@@ -11,10 +11,10 @@ import android.view.Window;
 import android.view.WindowManager;
 
 /**
- * The single place that knows Apple's metrics. Everything visual reads from
+ * The single place that knows Design's metrics. Everything visual reads from
  * here so spacing stays on the 4pt grid and radii stay consistent.
  */
-public final class Apple {
+public final class Design {
 
     // 4pt spacing grid
     public static final int S1 = 4, S2 = 8, S3 = 12, S4 = 16, S5 = 20, S6 = 24, S8 = 32, S12 = 48;
@@ -63,7 +63,7 @@ public final class Apple {
 
     public static final int NAV_TRANSPARENT = 0x00000000;
 
-    private Apple() {}
+    private Design() {}
 
     public static boolean isDark(Context ctx) {
         int mode = ctx.getResources().getConfiguration().uiMode

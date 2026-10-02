@@ -232,8 +232,8 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.VH> {
                         ? R.drawable.bg_grid_photo : R.drawable.bg_row_photo);
                 glyph.setVisibility(View.GONE);
                 final String finalKey = e.file.getAbsolutePath() + "@"
-                        + Apple.dp(ctx, gridMode ? 78 : 38);
-                Thumbs.load(tile, e, Apple.dp(ctx, gridMode ? 78 : 38), () -> {
+                        + Design.dp(ctx, gridMode ? 78 : 38);
+                Thumbs.load(tile, e, Design.dp(ctx, gridMode ? 78 : 38), () -> {
                     // Undecodable file: fall back to the green image tile.
                     if (!finalKey.equals(tile.getTag())) return;
                     tile.setBackgroundResource(R.drawable.tile_image);
@@ -333,16 +333,16 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.VH> {
 
     public static int tintForCategory(FileEntry.Kind k) {
         switch (k) {
-            case FOLDER: return Apple.BLUE;
-            case IMAGE: return Apple.GREEN;
-            case VIDEO: return Apple.PURPLE;
-            case AUDIO: return Apple.PINK;
-            case PDF: return Apple.RED;
-            case ARCHIVE: return Apple.ORANGE;
-            case CODE: return Apple.INDIGO;
-            case APK: return Apple.GREEN;
-            case TEXT: return Apple.ORANGE;
-            default: return Apple.GRAY_DARK;
+            case FOLDER: return Design.BLUE;
+            case IMAGE: return Design.GREEN;
+            case VIDEO: return Design.PURPLE;
+            case AUDIO: return Design.PINK;
+            case PDF: return Design.RED;
+            case ARCHIVE: return Design.ORANGE;
+            case CODE: return Design.INDIGO;
+            case APK: return Design.GREEN;
+            case TEXT: return Design.ORANGE;
+            default: return Design.GRAY_DARK;
         }
     }
 }

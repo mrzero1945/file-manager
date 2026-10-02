@@ -46,11 +46,11 @@ public class TabBar extends FrameLayout {
 
     public TabBar(Context ctx) {
         super(ctx);
-        hairline = Apple.hairline(ctx);
-        contentHeight = Apple.dp(ctx, Apple.TAB_BAR_DP);
-        bottomInset = Apple.navBarHeight(ctx);
+        hairline = Design.hairline(ctx);
+        contentHeight = Design.dp(ctx, Design.TAB_BAR_DP);
+        bottomInset = Design.navBarHeight(ctx);
         totalHeight = contentHeight + bottomInset;
-        Apple.applyBarScrim(this, 0xFF0C0C0E);
+        Design.applyBarScrim(this, 0xFF0C0C0E);
         setWillNotDraw(false);
 
         LinearLayout row = new LinearLayout(ctx);
@@ -79,14 +79,14 @@ public class TabBar extends FrameLayout {
             ic.setImageResource(ICONS[i]);
             ic.setImportantForAccessibility(IMPORTANT_FOR_ACCESSIBILITY_NO);
             LinearLayout.LayoutParams ilp = new LinearLayout.LayoutParams(
-                    Apple.dp(ctx, 25f), Apple.dp(ctx, 25f));
-            ilp.topMargin = Apple.dp(ctx, 6f);
+                    Design.dp(ctx, 25f), Design.dp(ctx, 25f));
+            ilp.topMargin = Design.dp(ctx, 6f);
             slot.addView(ic, ilp);
             icons[i] = ic;
 
             TextView tv = new TextView(ctx);
             tv.setText(TITLES[i]);
-            tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, Apple.TAB_LABEL_SP);
+            tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, Design.TAB_LABEL_SP);
             tv.setTypeface(android.graphics.Typeface.create("sans-serif-medium",
                     android.graphics.Typeface.NORMAL));
             tv.setLetterSpacing(0.004f);
@@ -94,7 +94,7 @@ public class TabBar extends FrameLayout {
             tv.setImportantForAccessibility(IMPORTANT_FOR_ACCESSIBILITY_NO);
             LinearLayout.LayoutParams tlp = new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            tlp.topMargin = Apple.dp(ctx, 2.5f);
+            tlp.topMargin = Design.dp(ctx, 2.5f);
             slot.addView(tv, tlp);
             labels[i] = tv;
 

@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Apple.edgeToEdge(getWindow());
+        Design.edgeToEdge(getWindow());
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
         FrameLayout root = new FrameLayout(this);
@@ -321,7 +321,7 @@ public class MainActivity extends AppCompatActivity {
             box.setFocusable(true);
             ProgressBar spin = new ProgressBar(this);
             FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(
-                    Apple.dp(this, 44), Apple.dp(this, 44), android.view.Gravity.CENTER);
+                    Design.dp(this, 44), Design.dp(this, 44), android.view.Gravity.CENTER);
             box.addView(spin, lp);
             root.addView(box, new FrameLayout.LayoutParams(
                     FrameLayout.LayoutParams.MATCH_PARENT,

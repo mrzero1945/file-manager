@@ -41,7 +41,7 @@ public class SettingsPage extends FrameLayout {
 
         root = new LinearLayout(act);
         root.setOrientation(LinearLayout.VERTICAL);
-        root.setPadding(0, topInset, 0, bottomInset + Apple.dp(act, 16f));
+        root.setPadding(0, topInset, 0, bottomInset + Design.dp(act, 16f));
 
         ScrollView sv = new ScrollView(act);
         sv.setFillViewport(true);
@@ -78,7 +78,7 @@ public class SettingsPage extends FrameLayout {
     private void buildStorageGroup() {
         root.addView(Controls.sectionHeader(act, "Storage"));
         LinearLayout g = Controls.group(act);
-        int inset = Apple.dp(act, 16f);
+        int inset = Design.dp(act, 16f);
         g.setLayoutParams(new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
@@ -150,10 +150,10 @@ public class SettingsPage extends FrameLayout {
                     null, exists ? v -> gotoFolder(dir) : null);
             if (!exists) row.setAlpha(0.4f);
             g.addView(row);
-            wrap(g, Apple.dp(act, 16f));
+            wrap(g, Design.dp(act, 16f));
             if (i < locs.length - 1) {
                 LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) g.getLayoutParams();
-                lp.bottomMargin = Apple.dp(act, 8f);
+                lp.bottomMargin = Design.dp(act, 8f);
                 g.setLayoutParams(lp);
             }
             root.addView(g);
@@ -168,7 +168,7 @@ public class SettingsPage extends FrameLayout {
                 act.toast("Settings unavailable");
             }
         }));
-        wrap(sys, Apple.dp(act, 16f));
+        wrap(sys, Design.dp(act, 16f));
         root.addView(sys);
     }
 
@@ -179,10 +179,10 @@ public class SettingsPage extends FrameLayout {
                 BuildConfig.VERSION_NAME, null, null));
         g.addView(Controls.insetDivider(act));
         g.addView(Controls.settingsRow(act, "Design",
-                "Apple HIG · Inkscape", null, null));
+                "Design HIG · Inkscape", null, null));
         g.addView(Controls.insetDivider(act));
         g.addView(Controls.settingsRow(act, "Icons", "60 vector symbols", null, null));
-        wrap(g, Apple.dp(act, 16f));
+        wrap(g, Design.dp(act, 16f));
         root.addView(g);
     }
 

@@ -1,7 +1,7 @@
 """
-Apple Files - design specification (single source of truth).
+File Manager - design specification (single source of truth).
 
-Everything the app renders is defined here once: the Apple-style colour system,
+Everything the app renders is defined here once: the colour system,
 the type ramp, the SF-Symbols-like 24x24 icon geometry, and the launcher icon.
 tools/make_assets.py turns this module into
 
@@ -9,11 +9,11 @@ tools/make_assets.py turns this module into
   * app/src/main/res/drawable/*.xml - Android VectorDrawables (same path data)
   * app/src/main/res/mipmap-*/      - launcher PNGs rendered *by Inkscape*
   * app/src/main/res/values/*.xml   - colour / string / theme resources
-  * design/AppleFiles-DesignSystem.svg - the human-readable design board
+  * design/FileManager-DesignSystem.svg - the human-readable design board
 """
 
 # ---------------------------------------------------------------------------
-# Colour system.  Apple HIG neutrals + system colours, tuned for dark mode.
+# Colour system.  platform neutrals + system colours, tuned for dark mode.
 # ---------------------------------------------------------------------------
 # Resource names match what the layouts reference (@color/label, @color/bg...).
 COLORS = {
@@ -381,7 +381,7 @@ CATEGORY_ICON = {
     "file": "file",
 }
 
-# Launcher icon: 1024 canvas, Apple "squircle" (superellipse n = 5) + folder glyph.
+# Launcher icon: 1024 canvas, "squircle" (superellipse n = 5) + folder glyph.
 LAUNCHER = {
     "size": 1024,
     "corner_radius_ratio": 0.2237,  # iOS icon corner radius / icon size
@@ -394,7 +394,7 @@ LAUNCHER = {
 
 
 def superellipse_path(cx, cy, rx, ry, n=5.0, steps=512):
-    """Closed superellipse (Apple squircle) as a cubic-free polyline path.
+    """Closed superellipse (squircle) as a cubic-free polyline path.
 
     Sampled densely and emitted as straight segments: at launcher sizes the
     deviation from the true curve is far below one pixel.
@@ -415,7 +415,7 @@ def superellipse_path(cx, cy, rx, ry, n=5.0, steps=512):
 
 
 def folder_glyph_path(size):
-    """Apple Files folder glyph, normalised into a `size` box centred on 0,0."""
+    """File Manager folder glyph, normalised into a `size` box centred on 0,0."""
     # Designed in a 24-unit grid, then scaled/translated.
     w = size / 24.0
     off_x = -size / 2.0

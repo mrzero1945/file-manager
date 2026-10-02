@@ -41,7 +41,7 @@ public class RecentsPage extends FrameLayout implements FileAdapter.Listener {
         surface.setListener(this);
         surface.adapter.setSelectionEnabled(false);
         surface.setTopInset(topInset);
-        surface.setBottomInset(bottomInset + Apple.dp(act, 12f));
+        surface.setBottomInset(bottomInset + Design.dp(act, 12f));
         // Index 0: an opaque surface added on top would hide the nav bar.
         addView(surface, 0, new LayoutParams(LayoutParams.MATCH_PARENT,
                 LayoutParams.MATCH_PARENT));
@@ -53,7 +53,7 @@ public class RecentsPage extends FrameLayout implements FileAdapter.Listener {
             @Override
             public void onScrolled(RecyclerView rv, int dx, int dy) {
                 nav.setCollapseProgress(surface.scrolledDistance()
-                        / Apple.dp(act, Apple.LARGE_TITLE_DP));
+                        / Design.dp(act, Design.LARGE_TITLE_DP));
             }
         });
     }

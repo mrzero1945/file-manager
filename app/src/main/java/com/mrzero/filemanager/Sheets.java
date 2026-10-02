@@ -31,7 +31,7 @@ import java.util.List;
  *
  * A real bottom sheet with a dimming scrim, rounded top corners, a grabber,
  * and stacked rows that press-in on touch. These are the pieces that make the
- * app read as "Apple" rather than as stock Material, so they are implemented
+ * app read as "File Manager" rather than as stock Material, so they are implemented
  * natively instead of pulling in Material's dialogs.
  */
 public final class Sheets {
@@ -104,14 +104,14 @@ public final class Sheets {
 
         LinearLayout card = new LinearLayout(ctx);
         card.setOrientation(LinearLayout.VERTICAL);
-        card.setBackground(Apple.round(0xFF1C1C1E, Apple.dp(ctx, 13f)));
-        card.setElevation(Apple.dp(ctx, 16f));
+        card.setBackground(Design.round(0xFF1C1C1E, Design.dp(ctx, 13f)));
+        card.setElevation(Design.dp(ctx, 16f));
 
         LinearLayout holder = new LinearLayout(ctx);
         holder.setOrientation(LinearLayout.VERTICAL);
         FrameLayout.LayoutParams cardLp = new FrameLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        int m = Apple.dp(ctx, 8f);
+        int m = Design.dp(ctx, 8f);
         cardLp.setMargins(m, 0, m, 0);
         holder.addView(card, cardLp);
 
@@ -121,7 +121,7 @@ public final class Sheets {
             LinearLayout head = new LinearLayout(ctx);
             head.setOrientation(LinearLayout.VERTICAL);
             head.setGravity(Gravity.CENTER);
-            int pad = Apple.dp(ctx, 16f);
+            int pad = Design.dp(ctx, 16f);
             head.setPadding(pad, pad, pad, pad);
             if (title != null && !title.isEmpty()) {
                 TextView t = new TextView(ctx);
@@ -142,12 +142,12 @@ public final class Sheets {
                     LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                             ViewGroup.LayoutParams.MATCH_PARENT,
                             ViewGroup.LayoutParams.WRAP_CONTENT);
-                    lp.topMargin = Apple.dp(ctx, 4f);
+                    lp.topMargin = Design.dp(ctx, 4f);
                     m2.setLayoutParams(lp);
                 }
                 head.addView(m2);
             }
-            head.setBackground(Apple.round(0xFF2C2C2E, Apple.dp(ctx, 13f)));
+            head.setBackground(Design.round(0xFF2C2C2E, Design.dp(ctx, 13f)));
             card.addView(head, new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             if (!items.isEmpty()) spacer(card, ctx, 0xFF48484A, 0.5f);
@@ -164,21 +164,21 @@ public final class Sheets {
         cancel.setTextSize(TypedValue.COMPLEX_UNIT_SP, 17f);
         cancel.setTypeface(android.graphics.Typeface.DEFAULT_BOLD);
         cancel.setAllCaps(false);
-        cancel.setBackground(Apple.round(0xFF1C1C1E, Apple.dp(ctx, 13f)));
-        cancel.setMinHeight(Apple.dp(ctx, 57f));
+        cancel.setBackground(Design.round(0xFF1C1C1E, Design.dp(ctx, 13f)));
+        cancel.setMinHeight(Design.dp(ctx, 57f));
         cancel.setOnClickListener(v -> {
             h.dismiss();
             if (onCancel != null) onCancel.run();
         });
         FrameLayout.LayoutParams cancelLp = new FrameLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        cancelLp.setMargins(m, Apple.dp(ctx, 8f), m, 0);
+        cancelLp.setMargins(m, Design.dp(ctx, 8f), m, 0);
         holder.addView(cancel, cancelLp);
 
         FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp.gravity = Gravity.BOTTOM;
-        holder.setPadding(0, 0, 0, Apple.navBarBottom(h.scrim) + Apple.dp(ctx, 8f));
+        holder.setPadding(0, 0, 0, Design.navBarBottom(h.scrim) + Design.dp(ctx, 8f));
         h.root.addView(holder, lp);
 
         // Pressing the scrim cancels, exactly like iOS.
@@ -196,10 +196,10 @@ public final class Sheets {
         LinearLayout row = new LinearLayout(ctx);
         row.setOrientation(LinearLayout.HORIZONTAL);
         row.setGravity(Gravity.CENTER_VERTICAL);
-        int padH = Apple.dp(ctx, 16f);
-        int padV = Apple.dp(ctx, 13f);
+        int padH = Design.dp(ctx, 16f);
+        int padV = Design.dp(ctx, 13f);
         row.setPadding(padH, padV, padH, padV);
-        row.setMinimumHeight(Apple.dp(ctx, 57f));
+        row.setMinimumHeight(Design.dp(ctx, 57f));
 
         int color = item.color != 0 ? item.color
                 : (item.destructive ? 0xFFFF453A : 0xFF0A84FF);
@@ -217,9 +217,9 @@ public final class Sheets {
             ImageView ic = new ImageView(ctx);
             ic.setImageResource(item.iconRes);
             ic.setColorFilter(color, android.graphics.PorterDuff.Mode.SRC_IN);
-            int s = Apple.dp(ctx, 21f);
+            int s = Design.dp(ctx, 21f);
             LinearLayout.LayoutParams ilp = new LinearLayout.LayoutParams(s, s);
-            ilp.leftMargin = Apple.dp(ctx, 12f);
+            ilp.leftMargin = Design.dp(ctx, 12f);
             ic.setLayoutParams(ilp);
             row.addView(ic);
         }
@@ -249,8 +249,8 @@ public final class Sheets {
 
         LinearLayout card = new LinearLayout(ctx);
         card.setOrientation(LinearLayout.VERTICAL);
-        card.setBackground(Apple.round(0xFF1C1C1E, Apple.dp(ctx, 13f)));
-        card.setElevation(Apple.dp(ctx, 16f));
+        card.setBackground(Design.round(0xFF1C1C1E, Design.dp(ctx, 13f)));
+        card.setElevation(Design.dp(ctx, 16f));
 
         TextView t = new TextView(ctx);
         t.setText(title);
@@ -259,8 +259,8 @@ public final class Sheets {
         t.setTypeface(android.graphics.Typeface.DEFAULT_BOLD);
         t.setLetterSpacing(-0.012f);
         t.setGravity(Gravity.CENTER);
-        int pad = Apple.dp(ctx, 16f);
-        t.setPadding(pad, Apple.dp(ctx, 19f), pad, message != null ? 0 : Apple.dp(ctx, 19f));
+        int pad = Design.dp(ctx, 16f);
+        t.setPadding(pad, Design.dp(ctx, 19f), pad, message != null ? 0 : Design.dp(ctx, 19f));
         card.addView(t);
 
         if (message != null && !message.isEmpty()) {
@@ -270,7 +270,7 @@ public final class Sheets {
             m.setTextSize(TypedValue.COMPLEX_UNIT_SP, 13f);
             m.setGravity(Gravity.CENTER);
             m.setLineSpacing(0, 1.15f);
-            m.setPadding(pad, 0, pad, Apple.dp(ctx, 16f));
+            m.setPadding(pad, 0, pad, Design.dp(ctx, 16f));
             card.addView(m);
         }
 
@@ -282,13 +282,13 @@ public final class Sheets {
             input.setTextSize(TypedValue.COMPLEX_UNIT_SP, 17f);
             input.setSingleLine(true);
             input.setSelectAllOnFocus(true);
-            input.setBackground(Apple.round(0xFF2C2C2E, Apple.dp(ctx, 10f)));
-            input.setPadding(Apple.dp(ctx, 12f), Apple.dp(ctx, 10f),
-                    Apple.dp(ctx, 12f), Apple.dp(ctx, 10f));
+            input.setBackground(Design.round(0xFF2C2C2E, Design.dp(ctx, 10f)));
+            input.setPadding(Design.dp(ctx, 12f), Design.dp(ctx, 10f),
+                    Design.dp(ctx, 12f), Design.dp(ctx, 10f));
             FrameLayout wrap = new FrameLayout(ctx);
             FrameLayout.LayoutParams wlp = new FrameLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            wlp.setMargins(pad, 0, pad, Apple.dp(ctx, 16f));
+            wlp.setMargins(pad, 0, pad, Design.dp(ctx, 16f));
             wrap.addView(input, new FrameLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             card.addView(wrap, new LinearLayout.LayoutParams(
@@ -325,7 +325,7 @@ public final class Sheets {
         FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp.gravity = Gravity.CENTER;
-        int side = Apple.dp(ctx, 20f);
+        int side = Design.dp(ctx, 20f);
         lp.setMargins(side, 0, side, 0);
         h.root.addView(card, lp);
 
@@ -367,7 +367,7 @@ public final class Sheets {
         b.setLetterSpacing(-0.012f);
         b.setAllCaps(false);
         b.setBackgroundColor(Color.TRANSPARENT);
-        b.setMinHeight(Apple.dp(ctx, 44f));
+        b.setMinHeight(Design.dp(ctx, 44f));
         return b;
     }
 
@@ -380,8 +380,8 @@ public final class Sheets {
 
         LinearLayout card = new LinearLayout(ctx);
         card.setOrientation(LinearLayout.VERTICAL);
-        card.setBackground(Apple.round(0xFF2C2C2E, Apple.dp(ctx, 14f)));
-        card.setElevation(Apple.dp(ctx, 20f));
+        card.setBackground(Design.round(0xFF2C2C2E, Design.dp(ctx, 14f)));
+        card.setElevation(Design.dp(ctx, 20f));
 
         for (int i = 0; i < items.size(); i++) {
             addMenuRow(card, ctx, items.get(i), h);
@@ -398,12 +398,12 @@ public final class Sheets {
         int screenH = ctx.getResources().getDisplayMetrics().heightPixels;
 
         int x = loc[0] + anchor.getWidth() - w;
-        int y = loc[1] + anchor.getHeight() + Apple.dp(ctx, 4f);
-        if (x + w + Apple.dp(ctx, 8f) > screenW) {
-            x = Math.max(Apple.dp(ctx, 8f), screenW - w - Apple.dp(ctx, 8f));
+        int y = loc[1] + anchor.getHeight() + Design.dp(ctx, 4f);
+        if (x + w + Design.dp(ctx, 8f) > screenW) {
+            x = Math.max(Design.dp(ctx, 8f), screenW - w - Design.dp(ctx, 8f));
         }
-        if (y + hgt + Apple.dp(ctx, 12f) > screenH) {
-            y = Math.max(Apple.dp(ctx, 12f), loc[1] - hgt - Apple.dp(ctx, 4f));
+        if (y + hgt + Design.dp(ctx, 12f) > screenH) {
+            y = Math.max(Design.dp(ctx, 12f), loc[1] - hgt - Design.dp(ctx, 4f));
         }
 
         FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(w, hgt);
@@ -427,9 +427,9 @@ public final class Sheets {
         LinearLayout row = new LinearLayout(ctx);
         row.setOrientation(LinearLayout.HORIZONTAL);
         row.setGravity(Gravity.CENTER_VERTICAL);
-        int padH = Apple.dp(ctx, 15f);
-        row.setPadding(padH, Apple.dp(ctx, 11f), padH, Apple.dp(ctx, 11f));
-        row.setMinimumHeight(Apple.dp(ctx, 44f));
+        int padH = Design.dp(ctx, 15f);
+        row.setPadding(padH, Design.dp(ctx, 11f), padH, Design.dp(ctx, 11f));
+        row.setMinimumHeight(Design.dp(ctx, 44f));
 
         int color = item.color != 0 ? item.color
                 : (item.destructive ? 0xFFFF453A : 0xFFFFFFFF);
@@ -438,9 +438,9 @@ public final class Sheets {
             ImageView ic = new ImageView(ctx);
             ic.setImageResource(item.iconRes);
             ic.setColorFilter(color, android.graphics.PorterDuff.Mode.SRC_IN);
-            int s = Apple.dp(ctx, 19f);
+            int s = Design.dp(ctx, 19f);
             LinearLayout.LayoutParams ilp = new LinearLayout.LayoutParams(s, s);
-            ilp.rightMargin = Apple.dp(ctx, 12f);
+            ilp.rightMargin = Design.dp(ctx, 12f);
             ic.setLayoutParams(ilp);
             row.addView(ic);
         }
@@ -471,8 +471,8 @@ public final class Sheets {
 
         LinearLayout card = new LinearLayout(ctx);
         card.setOrientation(LinearLayout.VERTICAL);
-        card.setBackground(Apple.round(0xFF1C1C1E, Apple.dp(ctx, 13f)));
-        card.setElevation(Apple.dp(ctx, 16f));
+        card.setBackground(Design.round(0xFF1C1C1E, Design.dp(ctx, 13f)));
+        card.setElevation(Design.dp(ctx, 16f));
 
         TextView head = new TextView(ctx);
         head.setText(title);
@@ -480,8 +480,8 @@ public final class Sheets {
         head.setTextSize(TypedValue.COMPLEX_UNIT_SP, 13f);
         head.setTypeface(android.graphics.Typeface.DEFAULT_BOLD);
         head.setLetterSpacing(-0.006f);
-        int pad = Apple.dp(ctx, 16f);
-        head.setPadding(pad, Apple.dp(ctx, 16f), pad, Apple.dp(ctx, 12f));
+        int pad = Design.dp(ctx, 16f);
+        head.setPadding(pad, Design.dp(ctx, 16f), pad, Design.dp(ctx, 12f));
         card.addView(head);
 
         for (int i = 0; i < options.size(); i++) {
@@ -489,8 +489,8 @@ public final class Sheets {
             final LinearLayout row = new LinearLayout(ctx);
             row.setOrientation(LinearLayout.HORIZONTAL);
             row.setGravity(Gravity.CENTER_VERTICAL);
-            row.setPadding(pad, Apple.dp(ctx, 12f), pad, Apple.dp(ctx, 12f));
-            row.setMinimumHeight(Apple.dp(ctx, 46f));
+            row.setPadding(pad, Design.dp(ctx, 12f), pad, Design.dp(ctx, 12f));
+            row.setMinimumHeight(Design.dp(ctx, 46f));
 
             TextView label = new TextView(ctx);
             label.setText(o.label);
@@ -504,9 +504,9 @@ public final class Sheets {
                 ImageView check = new ImageView(ctx);
                 check.setImageResource(R.drawable.ic_check);
                 check.setColorFilter(0xFF0A84FF, android.graphics.PorterDuff.Mode.SRC_IN);
-                int s = Apple.dp(ctx, 17f);
+                int s = Design.dp(ctx, 17f);
                 LinearLayout.LayoutParams clp = new LinearLayout.LayoutParams(s, s);
-                clp.leftMargin = Apple.dp(ctx, 12f);
+                clp.leftMargin = Design.dp(ctx, 12f);
                 check.setLayoutParams(clp);
                 row.addView(check);
             }
@@ -522,14 +522,14 @@ public final class Sheets {
         FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp.gravity = Gravity.CENTER;
-        lp.setMargins(Apple.dp(ctx, 20f), 0, Apple.dp(ctx, 20f), 0);
+        lp.setMargins(Design.dp(ctx, 20f), 0, Design.dp(ctx, 20f), 0);
         h.root.addView(card, lp);
 
         h.scrim.setOnClickListener(v -> h.dismiss());
         h.scrim.setClickable(true);
 
         card.setAlpha(0f);
-        card.setTranslationY(Apple.dp(ctx, 12f));
+        card.setTranslationY(Design.dp(ctx, 12f));
         card.animate().alpha(1f).translationY(0f)
                 .setDuration(200).setInterpolator(Draw.EASE_OUT).start();
     }
@@ -555,24 +555,24 @@ public final class Sheets {
 
         LinearLayout card = new LinearLayout(ctx);
         card.setOrientation(LinearLayout.VERTICAL);
-        card.setBackground(Apple.round(0xFF1C1C1E, Apple.dp(ctx, 20f)));
-        card.setElevation(Apple.dp(ctx, 20f));
+        card.setBackground(Design.round(0xFF1C1C1E, Design.dp(ctx, 20f)));
+        card.setElevation(Design.dp(ctx, 20f));
 
-        int pad = Apple.dp(ctx, 20f);
+        int pad = Design.dp(ctx, 20f);
 
         LinearLayout head = new LinearLayout(ctx);
         head.setOrientation(LinearLayout.VERTICAL);
         head.setGravity(Gravity.CENTER_HORIZONTAL);
         FrameLayout tile = new FrameLayout(ctx);
         tile.setBackgroundResource(FileAdapter.tileResFor(e));
-        int tilePx = Apple.dp(ctx, 62f);
+        int tilePx = Design.dp(ctx, 62f);
         FrameLayout.LayoutParams tlp = new FrameLayout.LayoutParams(tilePx, tilePx);
-        tlp.bottomMargin = Apple.dp(ctx, 12f);
+        tlp.bottomMargin = Design.dp(ctx, 12f);
         ImageView g = new ImageView(ctx);
         g.setImageResource(FileAdapter.iconFor(e));
         g.setColorFilter(0xFFFFFFFF, android.graphics.PorterDuff.Mode.SRC_IN);
         tile.addView(g, new FrameLayout.LayoutParams(
-                Apple.dp(ctx, 34f), Apple.dp(ctx, 34f), Gravity.CENTER));
+                Design.dp(ctx, 34f), Design.dp(ctx, 34f), Gravity.CENTER));
         head.addView(tile, tlp);
 
         TextView name = new TextView(ctx);
@@ -590,12 +590,12 @@ public final class Sheets {
         kind.setTextSize(TypedValue.COMPLEX_UNIT_SP, 13f);
         LinearLayout.LayoutParams klp = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        klp.topMargin = Apple.dp(ctx, 4f);
+        klp.topMargin = Design.dp(ctx, 4f);
         head.addView(kind, klp);
 
         LinearLayout.LayoutParams headLp = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        headLp.bottomMargin = Apple.dp(ctx, 18f);
+        headLp.bottomMargin = Design.dp(ctx, 18f);
         card.addView(head, headLp);
 
         infoRow(card, ctx, pad, "Kind", FileAdapter.kindLabel(e));
@@ -634,7 +634,7 @@ public final class Sheets {
         FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp.gravity = Gravity.CENTER;
-        lp.setMargins(Apple.dp(ctx, 16f), 0, Apple.dp(ctx, 16f), 0);
+        lp.setMargins(Design.dp(ctx, 16f), 0, Design.dp(ctx, 16f), 0);
         h.root.addView(card, lp);
 
         h.scrim.setOnClickListener(v -> h.dismiss());
@@ -652,14 +652,14 @@ public final class Sheets {
         LinearLayout row = new LinearLayout(ctx);
         row.setOrientation(LinearLayout.HORIZONTAL);
         row.setGravity(Gravity.TOP);
-        row.setPadding(pad, Apple.dp(ctx, 8f), pad, Apple.dp(ctx, 8f));
+        row.setPadding(pad, Design.dp(ctx, 8f), pad, Design.dp(ctx, 8f));
 
         TextView k = new TextView(ctx);
         k.setText(key);
         k.setTextColor(0x99EBEBF5);
         k.setTextSize(TypedValue.COMPLEX_UNIT_SP, 13f);
         k.setLayoutParams(new LinearLayout.LayoutParams(
-                Apple.dp(ctx, 88f), ViewGroup.LayoutParams.WRAP_CONTENT));
+                Design.dp(ctx, 88f), ViewGroup.LayoutParams.WRAP_CONTENT));
         row.addView(k);
 
         TextView v = new TextView(ctx);
@@ -682,7 +682,7 @@ public final class Sheets {
         View v = new View(ctx);
         v.setBackgroundColor(color);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT, Apple.hairline(ctx));
+                ViewGroup.LayoutParams.MATCH_PARENT, Design.hairline(ctx));
         parent.addView(v, lp);
     }
 
@@ -732,23 +732,23 @@ public final class Sheets {
         tv.setTextColor(0xFF000000);
         tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f);
         tv.setGravity(Gravity.CENTER);
-        tv.setPadding(Apple.dp(ctx, 18f), Apple.dp(ctx, 11f), Apple.dp(ctx, 18f), Apple.dp(ctx, 11f));
-        tv.setBackground(Apple.round(0xF0E8E8EA, Apple.dp(ctx, 14f)));
-        tv.setElevation(Apple.dp(ctx, 12f));
+        tv.setPadding(Design.dp(ctx, 18f), Design.dp(ctx, 11f), Design.dp(ctx, 18f), Design.dp(ctx, 11f));
+        tv.setBackground(Design.round(0xF0E8E8EA, Design.dp(ctx, 14f)));
+        tv.setElevation(Design.dp(ctx, 12f));
 
         FrameLayout decor = (FrameLayout) act.getWindow().getDecorView();
         FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp.gravity = Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL;
-        lp.bottomMargin = Apple.dp(ctx, 96f) + Apple.navBarBottom(decor);
+        lp.bottomMargin = Design.dp(ctx, 96f) + Design.navBarBottom(decor);
         decor.addView(tv, lp);
 
         tv.setAlpha(0f);
-        tv.setTranslationY(Apple.dp(ctx, 14f));
+        tv.setTranslationY(Design.dp(ctx, 14f));
         tv.animate().alpha(1f).translationY(0f)
                 .setDuration(220).setInterpolator(Draw.EASE_OUT).start();
         tv.postDelayed(() -> {
-            tv.animate().alpha(0f).translationY(Apple.dp(ctx, 8f))
+            tv.animate().alpha(0f).translationY(Design.dp(ctx, 8f))
                     .setDuration(240).setInterpolator(Draw.EASE_IN_OUT)
                     .withEndAction(() -> ((ViewGroup) tv.getParent()).removeView(tv))
                     .start();

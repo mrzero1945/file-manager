@@ -56,10 +56,10 @@ public class StoragePage extends FrameLayout {
 
         LinearLayout scroll = new LinearLayout(act);
         scroll.setOrientation(LinearLayout.VERTICAL);
-        scroll.setPadding(0, topInset, 0, bottomInset + Apple.dp(act, 12f));
+        scroll.setPadding(0, topInset, 0, bottomInset + Design.dp(act, 12f));
 
-        int chartSize = Math.min(Apple.dp(act, 200f),
-                act.getResources().getDisplayMetrics().widthPixels - Apple.dp(act, 120f));
+        int chartSize = Math.min(Design.dp(act, 200f),
+                act.getResources().getDisplayMetrics().widthPixels - Design.dp(act, 120f));
         chart = new StorageChart(act);
         FrameLayout chartWrap = new FrameLayout(act);
         FrameLayout.LayoutParams chartLp = new FrameLayout.LayoutParams(chartSize, chartSize,
@@ -67,8 +67,8 @@ public class StoragePage extends FrameLayout {
         chartWrap.addView(chart, chartLp);
         LinearLayout.LayoutParams wrapLp = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        wrapLp.topMargin = Apple.dp(act, 8f);
-        wrapLp.bottomMargin = Apple.dp(act, 4f);
+        wrapLp.topMargin = Design.dp(act, 8f);
+        wrapLp.bottomMargin = Design.dp(act, 4f);
         scroll.addView(chartWrap, wrapLp);
 
         freeLabel = new TextView(act);
@@ -76,7 +76,7 @@ public class StoragePage extends FrameLayout {
         freeLabel.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 15f);
         freeLabel.setGravity(Gravity.CENTER);
         freeLabel.setIncludeFontPadding(false);
-        freeLabel.setPadding(0, Apple.dp(act, 10f), 0, 0);
+        freeLabel.setPadding(0, Design.dp(act, 10f), 0, 0);
         scroll.addView(freeLabel, new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
@@ -87,7 +87,7 @@ public class StoragePage extends FrameLayout {
         usedLabel.setIncludeFontPadding(false);
         LinearLayout.LayoutParams ulp = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        ulp.bottomMargin = Apple.dp(act, 2f);
+        ulp.bottomMargin = Design.dp(act, 2f);
         scroll.addView(usedLabel, ulp);
 
         stampLabel = new TextView(act);
@@ -97,15 +97,15 @@ public class StoragePage extends FrameLayout {
         stampLabel.setIncludeFontPadding(false);
         LinearLayout.LayoutParams slp = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        slp.bottomMargin = Apple.dp(act, 18f);
+        slp.bottomMargin = Design.dp(act, 18f);
         scroll.addView(stampLabel, slp);
 
         listBox = new LinearLayout(act);
         listBox.setOrientation(LinearLayout.VERTICAL);
         LinearLayout.LayoutParams listLp = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        listLp.leftMargin = Apple.dp(act, 16f);
-        listLp.rightMargin = Apple.dp(act, 16f);
+        listLp.leftMargin = Design.dp(act, 16f);
+        listLp.rightMargin = Design.dp(act, 16f);
         scroll.addView(listBox, listLp);
 
         addView(scroll, new LayoutParams(LayoutParams.MATCH_PARENT,
@@ -125,7 +125,7 @@ public class StoragePage extends FrameLayout {
 
         sv.setOnScrollChangeListener(
                 (v, x, y, ox, oy) -> nav.setCollapseProgress(
-                        Math.max(0f, y) / Apple.dp(act, Apple.LARGE_TITLE_DP)));
+                        Math.max(0f, y) / Design.dp(act, Design.LARGE_TITLE_DP)));
 
         nav.addTrailing(Controls.iconButton(act, R.drawable.ic_refresh, 0xFF0A84FF,
                 "Refresh", v -> refresh()));
@@ -215,28 +215,28 @@ public class StoragePage extends FrameLayout {
         int[] colors = new int[cats.size()];
         for (int i = 0; i < cats.size(); i++) {
             values[i] = cats.get(i).bytes;
-            colors[i] = Apple.CATEGORY_HUE[cats.get(i).colorIndex % Apple.CATEGORY_HUE.length];
+            colors[i] = Design.CATEGORY_HUE[cats.get(i).colorIndex % Design.CATEGORY_HUE.length];
         }
         chart.setData(values, colors);
 
         listBox.removeAllViews();
-        listBox.setBackground(Apple.round(0xFF1C1C1E, Apple.dp(act, 10f)));
+        listBox.setBackground(Design.round(0xFF1C1C1E, Design.dp(act, 10f)));
         for (int i = 0; i < cats.size(); i++) {
             final FileEntry.Category c = cats.get(i);
-            int accent = Apple.CATEGORY_HUE[c.colorIndex % Apple.CATEGORY_HUE.length];
+            int accent = Design.CATEGORY_HUE[c.colorIndex % Design.CATEGORY_HUE.length];
 
             LinearLayout row = new LinearLayout(act);
             row.setOrientation(LinearLayout.HORIZONTAL);
             row.setGravity(Gravity.CENTER_VERTICAL);
-            int padH = Apple.dp(act, 14f);
-            row.setPadding(padH, Apple.dp(act, 10f), padH, Apple.dp(act, 10f));
-            row.setMinimumHeight(Apple.dp(act, 52f));
+            int padH = Design.dp(act, 14f);
+            row.setPadding(padH, Design.dp(act, 10f), padH, Design.dp(act, 10f));
+            row.setMinimumHeight(Design.dp(act, 52f));
 
             ImageView ic = new ImageView(act);
             ic.setImageResource(resFor(c.iconName));
             ic.setColorFilter(accent, android.graphics.PorterDuff.Mode.SRC_IN);
-            row.addView(ic, new LinearLayout.LayoutParams(Apple.dp(act, 20f),
-                    Apple.dp(act, 20f)));
+            row.addView(ic, new LinearLayout.LayoutParams(Design.dp(act, 20f),
+                    Design.dp(act, 20f)));
 
             TextView label = new TextView(act);
             label.setText(c.label);
@@ -246,7 +246,7 @@ public class StoragePage extends FrameLayout {
             label.setIncludeFontPadding(false);
             LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            llp.leftMargin = Apple.dp(act, 12f);
+            llp.leftMargin = Design.dp(act, 12f);
             row.addView(label, llp);
 
             View spacer = new View(act);
@@ -275,8 +275,8 @@ public class StoragePage extends FrameLayout {
                 View div = Controls.insetDivider(act);
                 div.setBackgroundColor(0x3FD4D4D6);
                 LinearLayout.LayoutParams dlp = new LinearLayout.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT, Apple.hairline(act));
-                dlp.leftMargin = Apple.dp(act, 46f);
+                        ViewGroup.LayoutParams.MATCH_PARENT, Design.hairline(act));
+                dlp.leftMargin = Design.dp(act, 46f);
                 listBox.addView(div, dlp);
             }
         }
