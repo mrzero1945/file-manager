@@ -1,7 +1,7 @@
 # File Manager
 
-A file manager for Android with an iOS-style interface, written in Java with a
-native C++ metadata engine.
+A file manager for Android with a clean, grouped-list interface, written in Java
+with a native C++ metadata engine.
 
 <p align="center">
   <img src="design/playstore-512.png" width="128" height="128" alt="File Manager icon">
